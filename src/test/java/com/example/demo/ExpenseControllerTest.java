@@ -27,26 +27,20 @@ public class ExpenseControllerTest {
     @Autowired
     private ExpenseRepository expenseRepository;
 
-//    @Test
-//    public void getHello() throws Exception {
-//        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
-//                .andExpect(status().isOk())
-//                .andExpect(content().string(equalTo("Greetings from Spring Boot")));
-//    }
-//
-//    @Test
-//    public void getExpense() throws Exception {
-//        String expenseString = "{\"description\":\"Test New\",\"amount\":10.0,\"date\":\"01/01/2023\"}";
-//        mvc.perform(MockMvcRequestBuilders.get("/expense").accept(MediaType.APPLICATION_JSON))
-//                .andExpect(status().isOk())
-//                .andExpect(content().json(expenseString));
-//    }
+    @Test
+    public void getExpense() throws Exception {
+        String expenseString = "{\"description\":\"Test New 1\",\"amount\":50.0,\"date\":\"02/01/2023\"}";
+
+        mvc.perform(MockMvcRequestBuilders.get("/expenses/1").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().json(expenseString));
+    }
 
     @Test
     public void addExpenseShouldCreateANewExpenseWithCorrectFields() throws Exception {
         String expenseString = "{\"description\":\"Test New TEST-CREATE\",\"amount\":10.0,\"date\":\"01/01/2023\"}";
 
-        mvc.perform(MockMvcRequestBuilders.post("/expenses/add")
+        mvc.perform(MockMvcRequestBuilders.post("/expenses")
                         .content(expenseString)
                         .contentType(MediaType.APPLICATION_JSON)
                 )

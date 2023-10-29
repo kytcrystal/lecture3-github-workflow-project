@@ -15,8 +15,6 @@ public class ExpenseController {
         this.repository = repository;
     }
 
-    Expense newExpense = new Expense(new Random().nextLong(),"Test New", 10.0F, "01/01/2023");
-
     @GetMapping("/expenses")
     public List<Expense> expensesAll() {
         return repository.findAll();
@@ -27,7 +25,7 @@ public class ExpenseController {
         return repository.findById(id);
     }
 
-    @PostMapping("/expenses/add")
+    @PostMapping("/expenses")
     public Expense addExpense(@RequestBody Expense newExpense) {
         return repository.save(newExpense);
     }

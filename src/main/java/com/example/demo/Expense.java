@@ -13,8 +13,7 @@ public class Expense {
 
     Expense() {}
 
-    public Expense(Long id, String description, Float amount, String date) {
-        this.id = id;
+    public Expense(String description, Float amount, String date) {
         this.description = description;
         this.amount = amount;
         this.date = date;
