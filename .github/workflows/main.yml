@@ -27,3 +27,6 @@ jobs:
         run: ./gradlew test
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+      - name: Checkstyle
+        run: ./gradlew checkstyleMain

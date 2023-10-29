@@ -9,16 +9,16 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 class LoadDatabase {
 
-    private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(LoadDatabase.class);
 
     @Bean
     CommandLineRunner initDatabase(ExpenseRepository repository) {
 
         return args -> {
-            log.info("Preloading " + repository.save(new Expense("Test 1", 50.0F, "02/01/2023")));
-            log.info("Preloading " + repository.save(new Expense("Test 2", 30.0F, "03/01/2023")));
-            log.info("Preloading " + repository.save(new Expense("Test 3", 60.0F, "03/01/2023")));
-            log.info("Preloading " + repository.save(new Expense("Test 4", 30.0F, "04/01/2023")));
+            LOGGER.info("Preloading " + repository.save(new Expense("Test 1", 50.0F, "02/01/2023")));
+            LOGGER.info("Preloading " + repository.save(new Expense("Test 2", 30.0F, "03/01/2023")));
+            LOGGER.info("Preloading " + repository.save(new Expense("Test 3", 60.0F, "03/01/2023")));
+            LOGGER.info("Preloading " + repository.save(new Expense("Test 4", 30.0F, "04/01/2023")));
 
         };
     }
