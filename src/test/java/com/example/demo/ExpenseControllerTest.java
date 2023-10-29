@@ -29,7 +29,7 @@ public class ExpenseControllerTest {
 
     @Test
     public void getExpense() throws Exception {
-        String expenseString = "{\"description\":\"Test New 1\",\"amount\":50.0,\"date\":\"02/01/2023\"}";
+        String expenseString = "{\"description\":\"Test 1\",\"amount\":50.0,\"date\":\"02/01/2023\"}";
 
         mvc.perform(MockMvcRequestBuilders.get("/expenses/1").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
