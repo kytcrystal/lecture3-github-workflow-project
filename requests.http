@@ -1,0 +1,16 @@
+### Get all expenses
+GET http://localhost:8080/expenses
+
+### Get expense by ID 
+GET http://localhost:8080/expenses/1
+
+### Create new expense
+POST http://localhost:8080/expenses
+Content-Type: application/json
+
+{
+  "description": "Test New",
+  "amount": 50.0,
+  "date": "05/01/2023"
+}
+
