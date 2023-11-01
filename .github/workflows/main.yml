@@ -1,3 +1,8 @@
+#################################################################################################################
+### Exercise lecture 3: Github workflows                                                                      ###
+###  - Repo: https://github.com/kytcrystal/lecture3-github-workflow-project/actions/runs/6725227588/workflow  ###
+###  - Authors: Crystal Kwok & Matteo Ponza                                                                   ###
+#################################################################################################################
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
