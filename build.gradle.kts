@@ -4,6 +4,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.15.RELEASE"
 	checkstyle
 	jacoco
+	id("net.foragerr.jmeter") version "1.1.0-4.0"
 }
 
 group = "com.example"
@@ -32,5 +33,6 @@ tasks.jacocoTestReport {
 	dependsOn(tasks.test)
 	reports {
 		xml.required = true
+		csv.required = true
 	}
 }

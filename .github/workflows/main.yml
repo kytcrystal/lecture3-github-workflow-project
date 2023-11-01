@@ -30,3 +30,9 @@ jobs:
 
       - name: Checkstyle
         run: ./gradlew checkstyleMain
+
+      - name: Start App
+        run: ./gradlew bootRun &
+
+      - name: Load Testing
+        run: ./gradlew jmRun
