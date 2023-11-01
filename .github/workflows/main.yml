@@ -36,3 +36,9 @@ jobs:
 
       - name: Load Testing
         run: ./gradlew jmRun
+
+      - name: Upload Load Testing Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: load-testing-results
+          path: build/jmeter-report/*.csv
